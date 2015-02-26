@@ -1,25 +1,109 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eym-eN-2By">
+                                <rect key="frame" x="0.0" y="20" width="160" height="568"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c10-cJ-f9I">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="568"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hue-IA-ctv">
+                                                <rect key="frame" x="30" y="8" width="61" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="61" id="Uhc-hV-r8l"/>
+                                                    <constraint firstAttribute="height" constant="21" id="kRv-WK-oYQ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.2512880989301744" green="0.62680326843842227" blue="0.84284248737373735" alpha="1" colorSpace="calibratedRGB"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="AR1-Mf-wVw"/>
+                                            <constraint firstItem="hue-IA-ctv" firstAttribute="leading" secondItem="c10-cJ-f9I" secondAttribute="leading" constant="30" id="VfX-qZ-Cti"/>
+                                            <constraint firstAttribute="height" constant="568" id="bmQ-dr-gnh"/>
+                                            <constraint firstItem="hue-IA-ctv" firstAttribute="top" secondItem="c10-cJ-f9I" secondAttribute="top" constant="8" id="bsa-Di-HrR"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="M5R-LK-A4N" appends="YES" id="OEd-c1-yHx"/>
+                                        </connections>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tmr-09-KHL">
+                                        <rect key="frame" x="120" y="0.0" width="40" height="40"/>
+                                        <color key="backgroundColor" red="0.47401970885345734" green="0.83022242469861673" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="0IG-2h-vs7"/>
+                                            <constraint firstAttribute="height" constant="40" id="jyY-gr-UT6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                        <state key="normal" title="=">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="8QK-8P-uQb"/>
+                                            <outletCollection property="gestureRecognizers" destination="CiT-ic-Pgw" appends="YES" id="F70-ek-3Go"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="c10-cJ-f9I" firstAttribute="top" secondItem="Eym-eN-2By" secondAttribute="top" id="2ja-Z8-sG1"/>
+                                    <constraint firstAttribute="trailing" secondItem="Tmr-09-KHL" secondAttribute="trailing" id="SMp-Pk-AXs"/>
+                                    <constraint firstItem="Tmr-09-KHL" firstAttribute="top" secondItem="Eym-eN-2By" secondAttribute="top" id="gvr-xx-cbq"/>
+                                    <constraint firstItem="c10-cJ-f9I" firstAttribute="leading" secondItem="Eym-eN-2By" secondAttribute="leading" id="jRS-ZQ-bfm"/>
+                                    <constraint firstAttribute="width" constant="160" id="kmv-MR-8c7"/>
+                                    <constraint firstAttribute="height" constant="568" id="xSr-oO-zFl"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Eym-eN-2By" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="-120" id="ITR-yM-1tY"/>
+                            <constraint firstItem="Eym-eN-2By" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="20" id="XkL-Y5-QgF"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="constraintToLeft" destination="ITR-yM-1tY" id="En0-RD-BiE"/>
+                        <outlet property="hiddenView" destination="Eym-eN-2By" id="eIJ-62-seM"/>
+                        <outlet property="menuView" destination="c10-cJ-f9I" id="QXf-Ct-mBO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="CiT-ic-Pgw">
+                    <connections>
+                        <action selector="handlePanFromButton:" destination="vXZ-lx-hvc" id="5cE-IG-juP"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="M5R-LK-A4N">
+                    <connections>
+                        <action selector="handlePanFromMenue:" destination="vXZ-lx-hvc" id="f7X-Hs-nuI"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="202" y="377"/>
         </scene>
     </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>

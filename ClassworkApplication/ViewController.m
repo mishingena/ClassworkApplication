@@ -11,6 +11,7 @@
 @interface ViewController () {
     CGPoint startPan;
     CGPoint touchLocation;
+    CGFloat visibleWidth;
 }
 
 @property (weak, nonatomic) IBOutlet UIView *hiddenView;
@@ -57,10 +58,11 @@
         [self.hiddenView setFrame:CGRectMake(x, y, self.hiddenView.frame.size.width, self.hiddenView.frame.size.height)];
         self.constraintToLeft.constant = x;
     } else if (pan.state == UIGestureRecognizerStateEnded) {
-        
-        if (touchLocation.x > startPan.x) {
+        visibleWidth = self.menuView.frame.size.width + self.hiddenView.frame.origin.x;
+        NSLog(@"vis %f", visibleWidth);
+        if (touchLocation.x > startPan.x || (visibleWidth >= self.hiddenView.frame.size.width / 2 && touchLocation.x <= startPan.x)) {
             [self animateToRight];
-        } else if (startPan.x > touchLocation.x) {
+        } else if (startPan.x > touchLocation.x || (visibleWidth < self.hiddenView.frame.size.width / 2 && startPan.x <= touchLocation.x)) {
             [self animateToLeft];
         }
     }
@@ -79,10 +81,11 @@
         [self.hiddenView setFrame:CGRectMake(x, y, self.hiddenView.frame.size.width, self.hiddenView.frame.size.height)];
         self.constraintToLeft.constant = x;
     } else if (pan.state == UIGestureRecognizerStateEnded) {
-        
-        if (touchLocation.x > startPan.x) {
+        visibleWidth = self.menuView.frame.size.width + self.hiddenView.frame.origin.x;
+        NSLog(@"vis %f", visibleWidth);
+        if (touchLocation.x > startPan.x || (visibleWidth >= self.hiddenView.frame.size.width / 2 && touchLocation.x <= startPan.x)) {
             [self animateToRight];
-        } else if (startPan.x > touchLocation.x) {
+        } else if (startPan.x > touchLocation.x || (visibleWidth < self.hiddenView.frame.size.width / 2 && startPan.x <= touchLocation.x)) {
             [self animateToLeft];
         }
     }
